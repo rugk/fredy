@@ -9,7 +9,7 @@ services:
     # map existing config and database
     volumes:
       - ./conf:/conf
-      - ./db:/db
+      - db:/db
     ports:
       - "9998:9998"
     restart: unless-stopped
@@ -20,3 +20,6 @@ services:
       timeout: 10s
       retries: 1
       start_period: 10s
+
+volumes:
+  db:
